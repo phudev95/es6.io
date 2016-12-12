@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>This in Class, Object</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+    <h1>This in Class, Object</h1>
+    <script type="text/javascript">
+        class ABC {
+            constructor () {
+                this.colors = ['green', 'blue', 'red'];
+            }
+
+            getColors () {
+                console.log(this);
+            }
+        }
+
+        const DEF = {
+            colors: ['green', 'blue', 'red'],
+
+            getColors() {
+                // this of DEF
+                console.log(this);
+            },
+
+            getColorsByArrow: () => {
+                // this of windows
+                console.log(this);
+            }
+        };
+
+        // ABC
+        const abc = new ABC();
+        abc.getColors();
+
+        // DEF
+        DEF.getColors();
+        DEF.getColorsByArrow();
+    </script>
+</body>
+</html>
